@@ -1,0 +1,20 @@
+.card-body{
+  box-sizing: border-box;
+  overflow: hidden;
+text-overflow: ellipsis;
+width: 300px;
+}
+
+.card-body span{
+  margin-right: 5px;
+  font-size: 1rem;
+  color: dimgray;
+}
+
+.card-text{
+  margin: 0;
+  padding: 0 3px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
