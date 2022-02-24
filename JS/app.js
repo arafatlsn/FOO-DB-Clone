@@ -47,7 +47,7 @@ const displayFoods = (inputTypesFoods) => {
           <div class="card-body">
             <h5 id="displayFoodTitle" class="card-title">${elementsFood.strMeal}</h5>
             <p class="card-text text-success">${elementsFood.strCategory}</p>
-            <p class="card-text"><span class="detailsButton"><i class="fa-solid fa-square-info"></i></span><small class="text-muted">${elementsFood.strInstructions}</small></p>
+            <p class="card-text"><span class="detailsButton" title="see-details"><i class="fa-solid fa-square-info"></i></span><small class="text-muted">${elementsFood.strInstructions}</small></p>
           </div>
         </div>
       </div>
@@ -61,9 +61,27 @@ const displayFoods = (inputTypesFoods) => {
   const allDetailsButton = document.getElementsByClassName('detailsButton');
 
   for(const allDetailsButtonMin of allDetailsButton){
-    allDetailsButtonMin.addEventListener('click', function(){
-      window.open('food-details.html', '_blank')
+    allDetailsButtonMin.addEventListener('click', function(
+      
+    ){
+      const displayDetailsParDiv = document.getElementById('displayDetailsParDiv');
+      const detailsImg = document.getElementById('detailsImg');
+      const detailsFoodTitle = document.getElementById('detailsFoodTitle');
+      const detailsFoodText = document.getElementById('detailsFoodText');
+
+      // window.open('food-details.html', '_blank');
+      console.log(this.parentNode.parentNode.childNodes[5].childNodes[1].innerText);
+      console.log(this.parentNode.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextSibling.src);
+      const storeUrl = this.parentNode.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextSibling.src;
+      console.log(storeUrl)
+      detailsImg.setAttribute('src', `${storeUrl}`);
+      detailsFoodTitle.innerText = this.parentNode.parentNode.firstChild.nextSibling.innerText;
+      detailsFoodText.innerText = this.parentNode.parentNode.childNodes[5].childNodes[1].innerText;
+      displayDetailsParDiv.style.display = 'block';
+
+
+      
+      
     })
   }
-
 };

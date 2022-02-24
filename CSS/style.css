@@ -9,6 +9,7 @@ width: 300px;
   margin-right: 5px;
   font-size: 1rem;
   color: dimgray;
+  cursor: pointer;
 }
 
 .card-text{
@@ -18,3 +19,39 @@ width: 300px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+#displayDetailsParDiv{
+  overflow: hidden;
+  position: relative;
+  display: none;
+}
+
+#displayDetailsParDiv:hover #detailsImg {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+#displayDetailsParDiv:hover #detailsFoodTitle{
+  background-color: rgba(0, 0, 0, .3);
+}
+
+#displayDetailsParDiv:hover #detailsFoodText{
+  background-color: rgba(0, 0, 0, .3);
+}
+
+#detailsFoodTitle{
+  transition: background-color .2s;
+}
+
+#detailsFoodText{
+  white-space: inherit;
+  transition: background-color .2s;
+}
+
+#detailsImg{
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 100%;
+  transition: filter .2s;
+}
+
