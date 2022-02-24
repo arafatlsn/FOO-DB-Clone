@@ -31,7 +31,7 @@ const allFoods = () => {
 
 allFoods()
 const displayFoods = (inputTypesFoods) => {
-  console.log(inputTypesFoods.meals);
+  // console.log(inputTypesFoods.meals);
   const displayAllFoods = document.getElementById('displayAllFoods');
   const displayFoodsDiv = document.getElementById('displayFoodsDiv');
   inputTypesFoods.meals.forEach(elementsFood => {
@@ -69,17 +69,14 @@ const displayFoods = (inputTypesFoods) => {
       const detailsFoodTitle = document.getElementById('detailsFoodTitle');
       const detailsFoodText = document.getElementById('detailsFoodText');
 
-      // window.open('food-details.html', '_blank');
       console.log(this.parentNode.parentNode.childNodes[5].childNodes[1].innerText);
-      console.log(this.parentNode.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextSibling.src);
+      // console.log(this.parentNode.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextSibling.src);
       const storeUrl = this.parentNode.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextSibling.src;
-      console.log(storeUrl)
+      // console.log(storeUrl)
       detailsImg.setAttribute('src', `${storeUrl}`);
       detailsFoodTitle.innerText = this.parentNode.parentNode.firstChild.nextSibling.innerText;
       detailsFoodText.innerText = this.parentNode.parentNode.childNodes[5].childNodes[1].innerText;
       displayDetailsParDiv.style.display = 'block';
-
-
       
       
     })
